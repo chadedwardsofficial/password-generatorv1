@@ -25,6 +25,13 @@ function generatePassword() {
   var uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   var numberChars = '0123456789';
   var specialChars = '!@#$%^&*()_+[]{}|;:,.<>?';
+  var allChars = ''
+  
+  if (usedLowercase) allChars += lowercaseChars;
+  if (usedUppercase) allChars += uppercaseChars;
+  if (usedNumbers) allChars += numberChars;
+  if (usedSpecialChars) allChars += specialChars;
+
 
 }
 
