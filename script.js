@@ -40,6 +40,7 @@ function generatePassword() {
     generatedPassword += allChars[randomIndex];
 
   }
+  return generatedPassword;
 }
 
 
