@@ -25,6 +25,7 @@ function generatePassword() {
   var uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   var numberChars = '0123456789';
   var specialChars = '!@#$%^&*()_+[]{}|;:,.<>?';
+  
   var allChars = ''
   
   if (usedLowercase) allChars += lowercaseChars;
@@ -32,7 +33,13 @@ function generatePassword() {
   if (usedNumbers) allChars += numberChars;
   if (usedSpecialChars) allChars += specialChars;
 
+  var generatedPassword = '';
 
+  for (var i = 0; i < passwordlength; i++) {
+    var randomIndex = Math.floor(Math.random() * allChars.length);
+    generatedPassword += allChars[randomIndex];
+
+  }
 }
 
 
