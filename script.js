@@ -13,6 +13,14 @@ function generatePassword() {
     alert("Please enter a numbered length for your password between 8 and 128 please.")
     return;
   } 
+  var usedLowercase = confirm("Would you like to include lowercase characters?");
+  var usedUppercase = confirm("Would you like to include uppercase characters?");
+  var usedNumbers = confirm("Would you like to include numbers?")
+  var usedSpecialChars = confirm("Would you like to include special characters?");
+    if (!usedLowercase && !usedUppercase && !usedNumbers && !usedSpecialChars){
+  alert("Please select at least one character type for your password");
+  return;
+}
 
 }
 
