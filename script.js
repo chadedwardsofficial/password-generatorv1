@@ -21,6 +21,10 @@ function generatePassword() {
   alert("Please select at least one character type for your password");
   return;
 }
+  var lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
+  var uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  var numberChars = '0123456789';
+  var specialChars = '!@#$%^&*()_+[]{}|;:,.<>?';
 
 }
 
