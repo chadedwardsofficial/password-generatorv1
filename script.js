@@ -1,7 +1,4 @@
-// Assignment code here
 
-
-// Get references to the #generate element
 
 var generateBtn = document.querySelector("#generate");
 
@@ -9,12 +6,12 @@ var generateBtn = document.querySelector("#generate");
 // Declaring a Function called generatePassword //
 
 function generatePassword() {
-  alert("A successful password should include uppercase & lowercase letters, number(s) and a special character");
+  alert("A successful password should include uppercase & lowercase letters, number(s) and a special character.");
 
   // Setting a variable to what the user is prompted to put in. Including parseInt to conver it to an integer. //
   // If user puts in a numeric value that is less than 8 or more than 128, it will be prompted with an alert error message //
 
-  var passwordlength = parseInt(prompt("Please choose a password length (between 8 and 128"));
+  var passwordlength = parseInt(prompt("Please choose a password length (between 8 and 128)"));
 if (passwordlength < 8 || passwordlength > 128) {
   alert("Please enter a numbered length for your password between 8 and 128 please.")
   return;
@@ -22,17 +19,16 @@ if (passwordlength < 8 || passwordlength > 128) {
 
 
     // Confirming that user would like to use these values and setting them to be true (by default) inside the declared variable//
-    // If the user at any point does not uphold all criteria, will be prompted with an alert of the below message//
+    // If the user at any point does not uphold criteria, will be prompted with an alert of the below message//
     
 var usedLowercase = confirm("Would you like to include lowercase characters?");
 var usedUppercase = confirm("Would you like to include uppercase characters?");
 var usedNumbers = confirm("Would you like to include numbers?")
 var usedSpecialChars = confirm("Would you like to include special characters?");
-if (!usedLowercase && !usedUppercase && !usedNumbers && !usedSpecialChars){
+if (!usedLowercase && !usedUppercase && !usedNumbers  && !usedSpecialChars){
   alert("Please select at least one character type for your password");
   return;
 }
-
   // Gave values to the variables for the prompt we gave the user//
 
   var lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
@@ -40,10 +36,9 @@ if (!usedLowercase && !usedUppercase && !usedNumbers && !usedSpecialChars){
   var numberChars = '0123456789';
   var specialChars = '!@#$%^&*()_+[]{}|;:,.<>?';
 
-// This line of code declares the variable 'allChars' to be empty so that we can add all 4 above variables together//
-// If the prompts between line 20-23 are boolean true, it will then add the set of characters to the allChars set and then run it's next line of code//
-// In theory it will go in order, adding all lowercaseChars first, then running the code again. Adding the lowercaseChars and uppercaseChars together.//
-// This code will run till all the values are ran and then we return to end  this code //
+// This line of code declares the variable 'allChars' to be empty so that we can add all 4 above variables together based on the used criteria//
+// If the prompts are boolean true or false, it will then add the set of characters to the allChars set and then run it's next line of code//
+
     var allChars = ''
   if (usedLowercase) allChars += lowercaseChars;
   if (usedUppercase) allChars += uppercaseChars;
@@ -51,9 +46,10 @@ if (!usedLowercase && !usedUppercase && !usedNumbers && !usedSpecialChars){
   if (usedSpecialChars) allChars += specialChars;
 
   // This block of code now declares a variable(generatedPassword) with an empty value//
-  // We run a for loop algorithm to prompt the computer to run this until 'i' is greater than the passwordLength chosen by the user on line 13//
+  // We run a for loop algorithm to prompt the computer to run this until 'i' is greater than the passwordLength chosen by the user on line 9//
   // Inside the for loop we declare a variable (randomIndex) to be our indexed number that has a randomized generator using Math.random. //
   // We multiply the randomized numeric value from math.random onto the length of allChars.length (the length of the array of the value allChars) //
+  // The randomized number will be at first set to a decimal int. We use the Math.floor method to round the number to its nearest whole integer//
   // Finally we take that randomly generated number assigned to randomIndex and put that as the index that will be chosen within allChars[]//
 
   var generatedPassword = '';
@@ -81,8 +77,6 @@ function writePassword() {
 
 }
 
-
-// Add event listener to generate button
 
 generateBtn.addEventListener("click", writePassword);
 
